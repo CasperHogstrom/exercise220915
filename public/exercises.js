@@ -85,6 +85,7 @@ function exercise4() {
                 text = text.replace(text[i], leetAlphabet.get(text[i]))
             }
         };
-
+        
+        //Exercise 5 :>)
         console.log(text);
     }
