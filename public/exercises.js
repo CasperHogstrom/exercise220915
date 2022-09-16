@@ -55,5 +55,36 @@ function exercise3() {
 }
 
 function exercise4() {
+    var textBoxValue = document.getElementById('txt').value;
+    const whitespaceRemove = textBoxValue.replace(/\s/g, '');
+    const letters = whitespaceRemove.split('');
 
-}
+    freq = [];
+    
+        letters.forEach((letter) => {
+            if (freq[letter] == undefined) {
+                freq[letter] = 1;
+            } else {
+                freq[letter]++;
+            }
+        });
+
+        for (const letterFreq in freq) {
+            console.log(`${letterFreq}: ${freq[letterFreq]}`);
+        };
+    }
+
+    function exercise5() {
+        var textBoxValue = document.getElementById('txt');
+        const leetAlphabet = new Map([['a', '4'], ['j', '_)'], ['e', '3'], ['h', '|-|'], ['g', '6'], ['t', '+'], ['r', '|2'], ['c', '('], ['s', '5'], ['p', '|>']]);
+
+        text = textBoxValue.value.toLowerCase();
+
+        for( i = 0; i < text.length; i++) {
+            if (leetAlphabet.get(text[i])){
+                text = text.replace(text[i], leetAlphabet.get(text[i]))
+            }
+        };
+
+        console.log(text);
+    }
